@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MIDI Polyphonic Synth</title>
+    <script src="synth.js" type="module"></script>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        /* Base gradient */
+        background: linear-gradient(120deg, #ff7e5f, #feb47b, #6a82fb, #fc5c7d);
+        background-size: 400% 400%;
+        animation: gradientShift 15s ease infinite;
+
+        /* Center content */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: #ffffff;
+        font-family: sans-serif;
+        text-align: center;
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Layout wrapper */
+      .ui-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      h1 {
+        margin: 0 0 0.5rem 0;
+        font-size: 2.5rem;
+        letter-spacing: 0.05em;
+        color: rgba(255, 255, 255, 0.4);
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
+      }
+      /* Shared styling for button + selects */
+      .control {
+        background: rgba(0, 0, 0, 0.2);
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        color: #ffffff;
+        padding: 0.5rem 1.5rem;
+        border-radius: 999px;
+        font-size: 1rem;
+        font-family: inherit;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        cursor: pointer;
+      }
+
+      .control:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7);
+      }
+
+      button.control {
+        background: rgba(255, 0, 0, 0.25);
+      }
+
+      /* Row for the two dropdowns */
+      .select-row {
+        display: flex;
+        gap: 0.75rem;
+      }
+
+      /* Remove native select background to match button more closely */
+      select.control {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ui-wrapper">
+      <h1>Synth</h1>
+
+      <button id="startButton" class="control">Audio Off</button>
+
+      <div class="select-row">
+        <select id="keySelect" class="control"></select>
+        <select id="scaleSelect" class="control"></select>
+      </div>
+    </div>
+  </body>
+</html>
