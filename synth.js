@@ -119,7 +119,7 @@ const activeVoices = {};
 
 const createReverb = async function () {
   // Load impulse response
-  let response = await fetch("TPAC-chapel.wav");
+  let response = await fetch("TPAC-Chapel.wav");
   let arraybuffer = await response.arrayBuffer();
   let ir = await mySynthCtx.decodeAudioData(arraybuffer);
 
