@@ -11,7 +11,7 @@ import MIDIengine from "./midi.js";
  * @description Maps scale names to arrays of semitone offsets from the root.
  */
 const scales = {
-  Major: [0, 2, 3, 5, 7, 9, 11],
+  Major: [0, 2, 4, 5, 7, 9, 11],
   "Natural Minor": [0, 2, 3, 5, 7, 8, 10],
   "Harmonic Minor": [0, 2, 3, 5, 7, 8, 11],
   "Melodic Minor": [0, 2, 3, 5, 7, 9, 11],
